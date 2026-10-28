@@ -16,6 +16,11 @@
           "type": "boolean",
           "default": false,
           "description": "Report inferred throws and promise rejections escaping module/script execution, including unknown/any effects from unmodelled external implementations."
+        },
+        "noUnhandledPromises": {
+          "type": "boolean",
+          "default": false,
+          "description": "Report potentially rejecting promises left unhandled in any scope, including function and callback bodies. Return, await, or attach a rejection handler to the promise."
         }
       }
     }
