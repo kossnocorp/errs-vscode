@@ -1,0 +1,6 @@
+# ErrorScript standalone build outputs and module-local tooling.
+/dist/development/
+/dist/production/
+/dist/*.vsix
+/dist/editor-test/
+/src/errs/node_modules/

@@ -1,0 +1,12 @@
+// @ts-check
+/** Keep this documentation.
+ * @param {boolean} flag
+ * @returns {number} Keep this return description.
+ */
+export function annotated(flag) {
+    if (flag) throw new Error('failure');
+    return 123;
+}
+/** Keep this description too. */
+export function unannotated() { throw new Error('failure'); }
+export const arrow = () => { throw new Error('failure'); };

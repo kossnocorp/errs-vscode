@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "errorOptions": {
+      "type": "object",
+      "description": "ErrorScript error-effect checking options.",
+      "additionalProperties": false,
+      "properties": {
+        "noImplicitReturns": {
+          "type": "boolean",
+          "default": false,
+          "description": "Require a Returns<Value, Error> return annotation on user-written functions with inferred throws or rejections. Separate from compilerOptions.noImplicitReturns."
+        },
+        "noUnhandledRootErrors": {
+          "type": "boolean",
+          "default": false,
+          "description": "Report inferred throws and promise rejections escaping module/script execution, including unknown/any effects from unmodelled external implementations."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+[tasks.build]
+run = "node scripts/errs/build.mjs"
+
+[tasks."build:dev"]
+run = "node scripts/errs/build.mjs --dev"
+
+[tasks."build/package"]
+run = "node scripts/errs/package.mjs"
+
+[tasks.types]
+run = "npm --prefix src/errs run check"
+
+[tasks."test/editor"]
+depends = ["build:dev"]
+run = "node scripts/errs/test.mjs"

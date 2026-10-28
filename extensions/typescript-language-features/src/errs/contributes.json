@@ -1,0 +1,36 @@
+{
+  "languages": [
+    { "id": "errorscript", "aliases": ["ErrorScript"], "configuration": "./language-configuration.json" },
+    { "id": "errorscriptreact", "aliases": ["ErrorScript React"], "configuration": "./language-configuration.json" },
+    { "id": "errorscriptjavascript", "aliases": ["ErrorScript JavaScript"], "configuration": "./language-configuration.json" },
+    { "id": "errorscriptjavascriptreact", "aliases": ["ErrorScript JavaScript React"], "configuration": "./language-configuration.json" }
+  ],
+  "grammars": [
+    { "language": "errorscript", "scopeName": "source.errorscript", "path": "./syntaxes/errorscript.json" },
+    { "language": "errorscriptreact", "scopeName": "source.errorscriptreact", "path": "./syntaxes/errorscriptreact.json" },
+    { "language": "errorscriptjavascript", "scopeName": "source.errorscriptjavascript", "path": "./syntaxes/errorscriptjavascript.json" },
+    { "language": "errorscriptjavascriptreact", "scopeName": "source.errorscriptjavascriptreact", "path": "./syntaxes/errorscriptjavascriptreact.json" }
+  ],
+  "commands": [
+    { "command": "errorscript.restartServer", "title": "Restart Language Server", "category": "ErrorScript" }
+  ],
+  "jsonValidation": [
+    { "fileMatch": ["tsconfig.json", "tsconfig.*.json", "jsconfig.json"], "url": "./error-options.schema.json" }
+  ],
+  "configuration": {
+    "title": "ErrorScript",
+    "properties": {
+      "errorscript.server.path": {
+        "type": "string",
+        "default": "",
+        "scope": "machine-overridable",
+        "markdownDescription": "Absolute path to a forked `tsrs` binary. Empty uses the bundled compiler. Restart the extension after changing this setting."
+      }
+    }
+  },
+  "configurationDefaults": {
+    "[errorscript][errorscriptreact][errorscriptjavascript][errorscriptjavascriptreact]": {
+      "editor.wordBasedSuggestions": "off"
+    }
+  }
+}

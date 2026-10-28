@@ -1,0 +1,38 @@
+import { makeError } from './fix-errors.js';
+class CustomError extends Error { readonly custom = true; }
+export function literal(flag: boolean) {
+    if (flag) throw new CustomError('failure');
+    return 'string' as const;
+}
+export function combined(flag: boolean) {
+    if (flag) throw new CustomError('failure');
+    throw new Error('failure');
+}
+export async function asyncFunction(flag: boolean) {
+    if (flag) throw new Error('failure');
+    return 123;
+}
+export function annotated(flag: boolean): string {
+    if (flag) throw new Error('failure');
+    return 'value';
+}
+export const single: (value: number) => number = value => {
+    if (value) throw new Error('failure');
+    return value;
+};
+export const arrow = (value: number) => {
+    if (value) throw new Error('failure');
+    return value;
+};
+export class Example {
+    method() { throw new Error('failure'); }
+    get value() { throw new Error('failure'); }
+}
+export function* generator() { yield 123; throw new Error('failure'); }
+export function overloaded(value: string): number;
+export function overloaded(value: number): number;
+export function overloaded(value: string | number) { if (value) throw new Error('failure'); return 123; }
+export function imported(flag: boolean) {
+    if (flag) throw makeError();
+    return 123;
+}
